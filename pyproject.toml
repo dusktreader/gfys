@@ -1,0 +1,25 @@
+[project]
+name = "gfys"
+version = "0.1.0"
+description = "Make `go test` output readable"
+authors = [
+    {name = "Tucker Beck", email ="tucker.beck@gmail.com"},
+]
+license = "MIT"
+readme = "README.md"
+license-files = ["LICENSE.md"]
+requires-python = ">=3.12"
+dependencies = [
+    "rich>=14.2.0",
+    "typer>=0.20.0",
+]
+
+[project.scripts]
+gfys = "gfys.main:app"
+
+[tool.uv]
+package = true
+
+[build-system]
+requires = ["uv_build>=0.9"]
+build-backend = "uv_build"
