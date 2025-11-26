@@ -38,6 +38,7 @@ def should_print_line(line: str | None):
 def print_line(line: str):
     line = line.rstrip()
     line = re.sub(r'^---\s+(PASS|FAIL):', r'\1:', line)
+    line = re.sub(r'[', r'\[', line)
 
     if re.match(r'(PASS|FAIL):\s+\w+', line):
         line = re.sub(r'\s+\(\d+\.\d+s\)\s*$', '', line)
