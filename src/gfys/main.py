@@ -54,7 +54,7 @@ def print_line(line: str):
     console.print(line, markup=True, highlight=False)
 
 
-def filter_output(lines):
+def filter_output(lines: list[str]):
     for line in lines:
         if should_print_line(line):
             print_line(line)
@@ -103,11 +103,11 @@ def main(
         sys.exit(result.returncode)
 
     except KeyboardInterrupt:
-        console.print("\n[yellow]Test interrupted[/yellow]")
+        console.print("\nTest interrupted", style="yellow")
         sys.exit(130)
 
     except Exception as e:
-        console.print(f"[red]Error running tests: {e}[/red]")
+        console.print(f"Error running tests: {e}", style="red", markup=False)
         sys.exit(1)
 
 
